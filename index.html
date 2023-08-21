@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="./jiomart.png" type="image/x-icon">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&family=Poppins:wght@400;500;600;700&&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-regular.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>JioMart - Anubhav's Touch</title>
+</head>
+
+<body>
+    <header class="p-fixed d-flex">
+        <div class="d-flex logo">
+            <img src="./jiomart.png" alt="Logo">
+            <p class="head-title">JioMart</p>
+        </div>
+
+        <section aria-label="closed" class="d-flex nav-container">
+            <nav class="navbar">
+                <ul class="upper-nav"></ul>
+
+                <ul class="main-nav">
+                    <section class="p-fixed menu-box opacity-0" id="menu-box" onmouseenter="openMenu()", onmouseleave="openMenu()"></section>
+                </ul>
+            </nav>
+
+            <nav class="navbar">
+                <ul class="lower-nav">
+                    
+                </ul>
+            </nav>
+        </section>
+
+        <div class="p-fixed d-flex menu-btn" onclick="openNavbar()">
+            <i class="fa-regular fa-bars"></i>
+        </div>
+    </header>
+
+    <section class="p-fixed filter"></section>
+
+    <script src="./script.js"></script>
+    <!-- <script src="./responsive.js"></script> -->
+</body>
+
+</html>
