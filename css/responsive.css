@@ -74,7 +74,7 @@
     header {
         width: 100vw;
         height: 110px;
-        padding: 30px;
+        padding: 30px 20px;
         transition: .5s;
     }
 
@@ -103,7 +103,7 @@
         display: grid;
         width: 100vw;
         gap: 20px;
-        padding: 30px;
+        padding: 30px 20px;
     }
 
     .upper-nav {
