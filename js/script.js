@@ -21,7 +21,7 @@ const createNavElement = (e, parent, funcName = null) => {
     li.append(link);
 
     parent.append(li);
-}
+};
 
 const openNavbar = () => {
     header.classList.toggle("h-full");
@@ -29,7 +29,7 @@ const openNavbar = () => {
     setTimeout(() => {
         navbar.classList.toggle("opacity-0");
     }, 500);
-}
+};
 
 const upperNavElements = [["Home", null, "active"], ["Search"]];
 
@@ -50,12 +50,22 @@ const upperNav = document.querySelector(".upper-nav");
 const mainNav = document.querySelector(".main-nav");
 const lowerNav = document.querySelector(".lower-nav");
 
-upperNavElements.forEach(e => {createNavElement(e, upperNav)});
-mainNavElements.forEach(e => {createNavElement(e, mainNav)});
-lowerNavElements.forEach(e => {createNavElement(e, lowerNav)});
+upperNavElements.forEach(e => { createNavElement(e, upperNav); });
+mainNavElements.forEach(e => { createNavElement(e, mainNav); });
+lowerNavElements.forEach(e => { createNavElement(e, lowerNav); });
 
 const header = document.querySelector("header");
 
 if (window.innerWidth <= 600) {
-    navbar.classList.add("d-none", "opacity-0")
+    navbar.classList.add("d-none", "opacity-0");
 }
+
+setInterval(() => {
+    if (window.innerWidth <= 600 && navbar.ariaLabel == "closed") {
+        navbar.classList.add("d-none", "opacity-0");
+        navbar.ariaLabel = "open";
+    } else if (window.innerWidth > 600) {
+        navbar.classList.remove("d-none", "opacity-0");
+        navbar.ariaLabel = "closed";
+    }
+}, 100);
