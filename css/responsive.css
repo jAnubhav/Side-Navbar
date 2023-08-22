@@ -120,6 +120,7 @@
         height: 90px;
         gap: 5px;
         margin: 0;
+        padding: 0;
         background: var(--gray);
         font-size: .9em;
         border: none;
