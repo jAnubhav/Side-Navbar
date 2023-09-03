@@ -56,16 +56,13 @@ lowerNavElements.forEach(e => { createNavElement(e, lowerNav); });
 
 const header = document.querySelector("header");
 
-if (window.innerWidth <= 600) {
-    navbar.classList.add("d-none", "opacity-0");
-}
-
 setInterval(() => {
-    if (window.innerWidth <= 600 && navbar.ariaLabel == "closed") {
+    if (window.innerWidth <= 600 && navbar.ariaLabel == "open") {
         navbar.classList.add("d-none", "opacity-0");
-        navbar.ariaLabel = "open";
+        navbar.ariaLabel = "closed";
     } else if (window.innerWidth > 600) {
         navbar.classList.remove("d-none", "opacity-0");
-        navbar.ariaLabel = "closed";
+        navbar.ariaLabel = "open";
+        header.classList.remove("h-full")
     }
 }, 100);
