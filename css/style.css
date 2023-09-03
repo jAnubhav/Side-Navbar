@@ -1,10 +1,10 @@
 :root {
     --black: #000000;
-    --dark: #181818;
-    --gray: #2c2c2c;
-    --light: #d2d2d2;
+    --dark: #141414;
+    --gray: #303030;
+    --light: #dadada;
     --red: #ff0000;
-    --theme: #d10000;
+    --theme: #dd0000;
     --white: #ffffff;
 }
 
@@ -48,7 +48,6 @@ header {
 }
 
 .navbar {
-    /* width: 100%; */
     list-style: none;
 }
 
@@ -72,12 +71,9 @@ header {
 }
 
 .active {
-    background: var(--theme);
-    border-color: var(--theme);
-}
-
-.active:hover {
-    color: var(--white);
+    background: var(--theme) !important;
+    color: var(--white) !important;
+    border-color: var(--theme) !important;
 }
 
 .profile {
