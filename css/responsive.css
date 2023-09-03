@@ -116,10 +116,6 @@
         border: none;
         border-radius: 10px;
     }
-
-    .active {
-        background: var(--theme);
-    }
 }
 
 @media (max-width:450px) {
