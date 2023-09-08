@@ -144,6 +144,7 @@
 
 @media (max-width:350px) {
     .nav-item {
-        font-size: .65em;
+        height: 70px;
+        font-size: .7em;
     }
 }
