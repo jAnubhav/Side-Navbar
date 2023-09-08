@@ -138,14 +138,12 @@
     }
 
     .nav-item {
-        height: 70px;
         font-size: .75em;
     }
 }
 
 @media (max-width:350px) {
     .nav-item {
-        height: 60px;
         font-size: .65em;
     }
 }
