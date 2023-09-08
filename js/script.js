@@ -26,11 +26,11 @@ let openMenu = () => {
 };
 
 let closeMenu = () => {
-    if (window.innerWidth <= 750 && header.ariaLabel == "open") {
+    if (window.innerWidth <= 700 && header.ariaLabel == "open") {
         header.classList.remove("h-full");
         navContainer.classList.add("d-none", "opacity-0");
         header.ariaLabel = "closed";
-    } else if (window.innerWidth > 750) {
+    } else if (window.innerWidth > 700) {
         header.classList.add("h-full");
         navContainer.classList.remove("d-none", "opacity-0");
         header.ariaLabel = "open";
