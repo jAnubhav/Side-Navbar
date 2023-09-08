@@ -126,7 +126,7 @@
         padding: 0;
         background: var(--gray);
         color: var(--white);
-        font-size: .8em;
+        font-size: .85em;
         border: none;
         border-radius: 10px;
     }
