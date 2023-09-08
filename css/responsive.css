@@ -87,11 +87,11 @@
     .link-title,
     .menu-btn {
         display: flex;
-        color: var(--white);
     }
-
+    
     .head-title,
     .menu-btn {
+        color: var(--white);
         font-size: 1.3em;
         font-weight: 600;
     }
@@ -125,6 +125,7 @@
         margin: 0;
         padding: 0;
         background: var(--gray);
+        color: var(--white);
         font-size: .8em;
         border: none;
         border-radius: 10px;
@@ -132,18 +133,6 @@
 }
 
 @media (max-width:450px) {
-    header {
-        height: 75px;
-    }
-    .logo {
-        height: 35px;
-    }
-
-    .head-title,
-    .menu-btn {
-        font-size: 1.2em;
-    }
-
     .navbar {
         gap: 15px;
     }
