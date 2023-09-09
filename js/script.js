@@ -3,12 +3,12 @@ const createNavElement = (elem, parent) => {
 
     const link = navItemTemplate.content.cloneNode(true).children[0];
     link.href = "#";
-    link.classList.add((elem.length == 3) ? elem[2] : "link");
+    link.classList.add(["link", elem[2]][~~(elem.length/3)]); // Using ~~ operator to get only the desirable values, i.e, 0 or 1 after performing elem.length/3
 
     let icon = link.querySelector("[data-icon]");
     let title = link.querySelector("[data-title]");
 
-    icon.classList.add(`fa-${!([1, 3].includes(elem.length)) ? "regular" : "solid"}`, `fa-${(elem.length == 1) ? elem[0].toLowerCase() : elem[1]}`);
+    icon.classList.add(`fa-${["regular", "solid"][elem.length%2]}`, `fa-${[elem[0].toLowerCase(), elem[1][Number(elem.length>1)]}`);
     link.title = title.textContent = elem[0];
 
     li.appendChild(link);
