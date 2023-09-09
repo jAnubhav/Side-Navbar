@@ -136,11 +136,14 @@
     .navbar {
         gap: 15px;
     }
+    .nav-item {
+        font-size: .8em;
+    }
 }
 
 @media (max-width:350px) {
     .nav-item {
-        height: 75px;
+        height: 70px;
         font-size: .75em;
     }
 }
