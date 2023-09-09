@@ -8,7 +8,7 @@ const createNavElement = (elem, parent) => {
     let icon = link.querySelector("[data-icon]");
     let title = link.querySelector("[data-title]");
 
-    icon.classList.add(`fa-${["regular", "solid"][elem.length%2]}`, `fa-${[elem[0].toLowerCase(), elem[1]][Number(elem.length>1)]}`);
+    icon.classList.add(`fa${['r', 's'][elem.length%2]}`, `fa-${[elem[0].toLowerCase(), elem[1]][Number(elem.length>1)]}`);
     link.title = title.textContent = elem[0];
 
     li.appendChild(link);
