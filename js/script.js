@@ -3,38 +3,50 @@ const createNavElement = (elem, parent) => {
 
     const link = navItemTemplate.content.cloneNode(true).children[0];
     link.href = "#";
-    link.classList.add(["link", elem[2]][~~(elem.length/3)]); // Using ~~ operator to get only the desirable values, i.e, 0 or 1 after performing elem.length/3
+    link.classList.add(["link", elem[2]][~~(elem.length / 3)]);
 
     let icon = link.querySelector("[data-icon]");
     let title = link.querySelector("[data-title]");
 
-    icon.classList.add(`fa${['r', 's'][elem.length%2]}`, `fa-${[elem[0].toLowerCase(), elem[1]][Number(elem.length>1)]}`);
+    icon.classList.add(`fa${["r", "s"][elem.length % 2]}`, `fa-${[elem[1], elem[0].toLowerCase()][Number(elem.length == 1)]}`);
+
     link.title = title.textContent = elem[0];
 
     li.appendChild(link);
     parent.append(li);
 
-    links.push(link);
+    return link;
 };
 
-let openMenu = () => {
+const setPage = (index = 0) => {
+    navItems[index].classList.add("active");
+    navItems[navItems.length - 1].classList.add("logo");
+    setTimeout(() => {
+        document.querySelector(".cover").classList.add("uncover")
+    }, 300)
+};
+
+const closeMenu = () => {
+    header.classList.toggle("h-full", window.innerWidth > 750);
+    header.classList.toggle("w-100", window.innerWidth <= 750);
+
+    ["d-none", "opacity-0"].forEach(tag => {
+        navContainer.classList.toggle(tag, window.innerWidth <= 750);
+    });
+
+    ["head-title", "menu-btn", "link-title"].forEach(elem => {
+        header.querySelectorAll(`.${elem}`).forEach(e => {
+            e.classList.toggle("d-none", window.innerWidth > 750);
+        });
+    });
+};
+
+const toggleMenu = () => {
     header.classList.toggle("h-full");
     navContainer.classList.toggle("d-none");
     setTimeout(() => {
         navContainer.classList.toggle("opacity-0");
     }, 300);
-};
-
-let closeMenu = () => {
-    if (window.innerWidth <= 700 && header.ariaLabel == "open") {
-        header.classList.remove("h-full");
-        navContainer.classList.add("d-none", "opacity-0");
-        header.ariaLabel = "closed";
-    } else if (window.innerWidth > 700) {
-        header.classList.add("h-full");
-        navContainer.classList.remove("d-none", "opacity-0");
-        header.ariaLabel = "open";
-    }
 };
 
 const navElements = [
@@ -56,14 +68,14 @@ const header = document.querySelector("header");
 const navContainer = document.querySelector(".nav-container");
 
 const navs = Array.from(document.getElementsByClassName("navbar"));
-const links = [];
+let navItems = [];
 
 navs.forEach((nav, index) => {
     navElements[index].forEach(elem => {
-        createNavElement(elem, nav);
+        navItems.push(createNavElement(elem, nav));
     });
 });
 
-links[0].classList.add("active");
-
-setInterval(closeMenu, 100);
+["load", "resize"].forEach(tag => {
+    window.addEventListener(tag, closeMenu);
+});
