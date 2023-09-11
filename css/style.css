@@ -1,21 +1,21 @@
 :root {
     --black: #000000;
     --dark: #161616;
-    --gray: #303030;
+    --gray: #2a2a2a;
     --light: #dfdfdf;
     --red: #ff0000;
-    --theme: #c90000;
+    --theme: #c40000;
     --white: #ffffff;
 }
 
 header {
-    flex-direction: column;
     padding: 20px 0;
     background: var(--dark);
+    z-index: 10;
 }
 
-.logo, .profile {
-    width: 55px;
+.logo {
+    height: 55px;
     aspect-ratio: 1;
     margin: 20px auto;
 }
@@ -24,13 +24,20 @@ header {
     height: 100%;
 }
 
-.head-title, .link-title, .menu-btn {
-    display: none;
+.head-title,
+.menu-btn {
+    color: var(--white);
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
 }
 
 .nav-container {
     flex-grow: 1;
-    flex-direction: column;
     margin: 20px 0;
     transition: 1s;
 }
@@ -56,12 +63,6 @@ header {
 .link:hover {
     color: var(--red);
     border-right-color: var(--theme);
-}
-
-.active {
-    background: var(--theme) !important;
-    color: var(--white) !important;
-    border-color: var(--theme);
 }
 
 .profile {
