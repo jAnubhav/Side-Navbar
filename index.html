@@ -18,20 +18,21 @@
     <title>JioMart - Anubhav's Touch</title>
 </head>
 
-<body onload="closeMenu()">
-    <header aria-label="open" class="p-fixed d-flex h-full">
+<body onload="setPage()">
+    <section class="p-fixed h-full cover"></section>
+    <header aria-label="open" class="p-fixed d-flex fld-column">
         <section class="d-flex j-space head-box">
             <div class="d-flex logo">
                 <img src="./assets/jiomart.png" alt="Logo">
                 <p class="head-title">JioMart</p>
             </div>
 
-            <button class="d-flex menu-btn" onclick="openMenu()">
+            <button class="d-flex menu-btn" onclick="toggleMenu()">
                 <i class="fa-regular fa-bars"></i>
             </button>
         </section>
 
-        <section class="d-flex j-space nav-container">
+        <section class="d-flex fld-column j-space nav-container">
             <nav>
                 <ul class="navbar upper-nav"></ul>
 
