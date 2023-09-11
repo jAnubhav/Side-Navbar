@@ -22,12 +22,20 @@ button {
     align-items: center;
 }
 
+.fld-column {
+    flex-direction: column;
+}
+
 .d-none {
     display: none;
 }
 
 .h-full {
     height: 100dvh;
+}
+
+.w-100 {
+    width: 100%;
 }
 
 .j-space {
@@ -37,4 +45,21 @@ button {
 
 .opacity-0 {
     opacity: 0;
+}
+
+.active {
+    background: var(--theme) !important;
+    color: var(--white) !important;
+    border-color: var(--theme) !important;
+}
+
+.cover {
+    width: 100vw;
+    background: var(--theme);
+    transition: 1.2s ease-in-out;
+    z-index: 100;
+}
+
+.uncover {
+    height: 0;
 }
